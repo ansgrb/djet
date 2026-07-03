@@ -1,0 +1,201 @@
+:root {
+  --obsidian: #090909;
+  --limestone: #ECE8DF;
+  --oxidized-gold: #B08D57;
+  --graphite: #1B1B1B;
+  --steel: #6E7681;
+  --font-primary: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--obsidian);
+  color: var(--limestone);
+  font-family: var(--font-primary);
+  line-height: 1.1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--oxidized-gold);
+  color: var(--obsidian);
+}
+
+#topology-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+.logo {
+  color: #fff;
+  pointer-events: auto;
+}
+
+.btn-contact {
+  pointer-events: auto;
+  font-family: var(--font-mono);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s ease;
+  background: rgba(0,0,0,0.1);
+  backdrop-filter: blur(5px);
+}
+
+.btn-contact:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.panel {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 4rem;
+  position: relative;
+}
+
+.content {
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.massive-text {
+  font-size: clamp(4rem, 15vw, 15rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+}
+
+.huge-text {
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.large-text {
+  font-size: clamp(2rem, 7vw, 6rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.dim-text {
+  color: var(--steel);
+}
+
+.accent-text {
+  color: var(--oxidized-gold);
+}
+
+.giant-list {
+  list-style: none;
+}
+
+.giant-list li {
+  font-size: clamp(2.5rem, 8vw, 7rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--limestone);
+  border-bottom: 2px solid var(--graphite);
+  padding: 1.5rem 0;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.giant-list li:hover {
+  color: var(--oxidized-gold);
+  padding-left: 2rem;
+}
+
+.giant-list.medium li {
+  font-size: clamp(2rem, 5vw, 4rem);
+  border-bottom: 1px solid var(--graphite);
+  padding: 1rem 0;
+}
+
+.giant-list.medium li:hover {
+  padding-left: 1.5rem;
+}
+
+.tech-text {
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  word-spacing: 0.2em;
+  color: var(--steel);
+}
+
+.tech-text:hover {
+  color: var(--limestone);
+  transition: color 0.5s ease;
+}
+
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--steel);
+  margin-bottom: 3rem;
+  display: block;
+}
+
+.mt-spacing {
+  margin-top: 3rem;
+}
+
+/* Scroll reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .fixed-header {
+    padding: 1.5rem;
+  }
+  .panel {
+    padding: 4rem 1.5rem;
+  }
+}

@@ -1,5 +1,3 @@
-import './style.css'
-
 // Add scroll reveal effect for the philosophy panels
 document.addEventListener('DOMContentLoaded', () => {
   const elements = document.querySelectorAll('.content');
